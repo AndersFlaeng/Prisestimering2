@@ -61,13 +61,13 @@ export default function Results({ data, totalHours, totalCost, onPrev }: Results
         <div className="flex items-center justify-between">
           <div>
             <CardTitle className="text-2xl font-semibold text-slate-900">
-              Project Estimate
+              Projekt Estimat
             </CardTitle>
             <p className="text-slate-600 mt-1">
-              Your complete project estimation breakdown
+              Din komplette projekt estimering opdeling
             </p>
           </div>
-          <div className="text-sm text-slate-500">Step 5 of 5</div>
+          <div className="text-sm text-slate-500">Trin 5 af 5</div>
         </div>
       </CardHeader>
 
@@ -78,9 +78,9 @@ export default function Results({ data, totalHours, totalCost, onPrev }: Results
             <CardContent className="p-4 text-center">
               <DollarSign className="h-8 w-8 text-brand-500 mx-auto mb-2" />
               <div className="text-2xl font-bold text-slate-900">
-                ${totalCost.toLocaleString()}
+                {totalCost.toLocaleString()} kr
               </div>
-              <div className="text-sm text-slate-600">Total Cost</div>
+              <div className="text-sm text-slate-600">Total Omkostning</div>
             </CardContent>
           </Card>
 
@@ -88,9 +88,9 @@ export default function Results({ data, totalHours, totalCost, onPrev }: Results
             <CardContent className="p-4 text-center">
               <Calendar className="h-8 w-8 text-green-500 mx-auto mb-2" />
               <div className="text-2xl font-bold text-slate-900">
-                {estimatedWeeks} weeks
+                {estimatedWeeks} uger
               </div>
-              <div className="text-sm text-slate-600">Timeline</div>
+              <div className="text-sm text-slate-600">Tidsramme</div>
             </CardContent>
           </Card>
 
@@ -100,7 +100,7 @@ export default function Results({ data, totalHours, totalCost, onPrev }: Results
               <div className="text-2xl font-bold text-slate-900">
                 {data.selectedFeatures.length}
               </div>
-              <div className="text-sm text-slate-600">Features</div>
+              <div className="text-sm text-slate-600">Funktioner</div>
             </CardContent>
           </Card>
 
@@ -108,9 +108,9 @@ export default function Results({ data, totalHours, totalCost, onPrev }: Results
             <CardContent className="p-4 text-center">
               <Database className="h-8 w-8 text-orange-500 mx-auto mb-2" />
               <div className="text-2xl font-bold text-slate-900">
-                {totalHours}h
+                {totalHours}t
               </div>
-              <div className="text-sm text-slate-600">Total Hours</div>
+              <div className="text-sm text-slate-600">Total Timer</div>
             </CardContent>
           </Card>
         </div>

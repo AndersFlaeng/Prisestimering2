@@ -101,7 +101,7 @@ export default function FeatureSelection({ data, updateData, onNext, onPrev }: F
                         <div className="font-medium text-slate-900">{feature.name}</div>
                         <div className="text-sm text-slate-600">{feature.description}</div>
                         <div className="text-xs text-brand-600 font-medium mt-1">
-                          ~{feature.baseHours} hours
+                          ~{feature.baseHours} timer
                         </div>
                       </div>
                     </label>
@@ -115,11 +115,11 @@ export default function FeatureSelection({ data, updateData, onNext, onPrev }: F
         <div className="flex justify-between items-center mt-8 pt-6 border-t border-slate-200">
           <Button variant="outline" onClick={onPrev}>
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Previous
+            Forrige
           </Button>
           
           <Button onClick={onNext} className="brand-500 hover:brand-600">
-            Continue to Tech Stack
+            Fortsæt til Teknologi Stack
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>

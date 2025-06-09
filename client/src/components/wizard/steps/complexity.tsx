@@ -15,15 +15,15 @@ interface ComplexityProps {
 const complexityOptions = [
   {
     value: "simple",
-    label: "Simple",
+    label: "Simpel",
     icon: Zap,
     multiplier: 0.8,
-    description: "Basic functionality, minimal customization, standard implementation",
+    description: "Grundlæggende funktionalitet, minimal tilpasning, standard implementering",
     features: [
-      "Standard UI components",
-      "Basic database operations",
-      "Simple user flows",
-      "Minimal third-party integrations"
+      "Standard UI komponenter",
+      "Grundlæggende database operationer",
+      "Simple brugerflow",
+      "Minimale tredjepartsintegrationer"
     ]
   },
   {
@@ -31,25 +31,25 @@ const complexityOptions = [
     label: "Medium",
     icon: Settings,
     multiplier: 1.0,
-    description: "Moderate complexity, some custom features, standard + custom implementation",
+    description: "Moderat kompleksitet, nogle tilpassede funktioner, standard + brugerdefineret implementering",
     features: [
-      "Custom UI components",
-      "Complex business logic",
-      "Multiple user roles",
-      "Several API integrations"
+      "Tilpassede UI komponenter",
+      "Kompleks forretningslogik",
+      "Flere brugerroller",
+      "Flere API integrationer"
     ]
   },
   {
     value: "complex",
-    label: "Complex",
+    label: "Kompleks",
     icon: Layers,
     multiplier: 1.4,
-    description: "High complexity, extensive customization, advanced implementation",
+    description: "Høj kompleksitet, omfattende tilpasning, avanceret implementering",
     features: [
-      "Highly custom UI/UX",
-      "Advanced algorithms",
-      "Complex workflows",
-      "Extensive integrations"
+      "Meget tilpasset UI/UX",
+      "Avancerede algoritmer",
+      "Komplekse workflows",
+      "Omfattende integrationer"
     ]
   }
 ];
@@ -61,13 +61,13 @@ export default function Complexity({ data, updateData, onNext, onPrev }: Complex
         <div className="flex items-center justify-between">
           <div>
             <CardTitle className="text-2xl font-semibold text-slate-900">
-              Project Complexity
+              Projekt Kompleksitet
             </CardTitle>
             <p className="text-slate-600 mt-1">
-              Assess the overall complexity and customization level of your project
+              Vurder den overordnede kompleksitet og tilpasningsniveau for dit projekt
             </p>
           </div>
-          <div className="text-sm text-slate-500">Step 4 of 5</div>
+          <div className="text-sm text-slate-500">Trin 4 af 5</div>
         </div>
       </CardHeader>
 
@@ -137,11 +137,11 @@ export default function Complexity({ data, updateData, onNext, onPrev }: Complex
         <div className="flex justify-between items-center mt-8 pt-6 border-t border-slate-200">
           <Button variant="outline" onClick={onPrev}>
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Previous
+            Forrige
           </Button>
           
           <Button onClick={onNext} className="brand-500 hover:brand-600">
-            View Results
+            Se Resultater
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>

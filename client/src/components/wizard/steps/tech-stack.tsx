@@ -55,13 +55,13 @@ export default function TechStack({ data, updateData, onNext, onPrev }: TechStac
         <div className="flex items-center justify-between">
           <div>
             <CardTitle className="text-2xl font-semibold text-slate-900">
-              Tech Stack Selection
+              Teknologi Stack Valg
             </CardTitle>
             <p className="text-slate-600 mt-1">
-              Choose the technologies for your project. Different choices affect development time and cost.
+              Vælg teknologierne til dit projekt. Forskellige valg påvirker udviklingstid og omkostninger.
             </p>
           </div>
-          <div className="text-sm text-slate-500">Step 3 of 5</div>
+          <div className="text-sm text-slate-500">Trin 3 af 5</div>
         </div>
       </CardHeader>
 
@@ -71,7 +71,7 @@ export default function TechStack({ data, updateData, onNext, onPrev }: TechStac
             <div key={category} className="border border-slate-200 rounded-lg p-6">
               <h3 className="font-semibold text-slate-900 mb-4 capitalize">
                 {category === 'frontend' && 'Frontend Framework'}
-                {category === 'backend' && 'Backend Technology'}
+                {category === 'backend' && 'Backend Teknologi'}
                 {category === 'database' && 'Database'}
                 {category === 'deployment' && 'Deployment'}
               </h3>
@@ -104,19 +104,19 @@ export default function TechStack({ data, updateData, onNext, onPrev }: TechStac
 
         <div className="mt-8 p-4 bg-slate-50 rounded-lg">
           <p className="text-sm text-slate-600">
-            <strong>Note:</strong> The multiplier indicates how the technology choice affects development time. 
-            A 1.2x multiplier means it takes 20% more time compared to the baseline technology.
+            <strong>Bemærk:</strong> Multiplikatoren viser, hvordan teknologivalget påvirker udviklingstiden. 
+            En 1.2x multiplikator betyder 20% mere tid sammenlignet med baseline teknologien.
           </p>
         </div>
 
         <div className="flex justify-between items-center mt-8 pt-6 border-t border-slate-200">
           <Button variant="outline" onClick={onPrev}>
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Previous
+            Forrige
           </Button>
           
           <Button onClick={onNext} className="brand-500 hover:brand-600">
-            Continue to Complexity
+            Fortsæt til Kompleksitet
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
