@@ -23,8 +23,8 @@ export default function ProgressSidebar({
 }: ProgressSidebarProps) {
   return (
     <div className="lg:col-span-1">
-      <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 sticky top-8">
-        <h2 className="text-lg font-semibold text-slate-900 mb-6">Projekt Estimering</h2>
+      <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-6 sticky top-8">
+        <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-6">Projekt Estimering</h2>
         
         {/* Progress Steps */}
         <div className="space-y-4">
@@ -37,7 +37,7 @@ export default function ProgressSidebar({
                 key={index}
                 className={`flex items-center space-x-3 p-3 rounded-lg border ${
                   isCurrent || isCompleted 
-                    ? 'bg-blue-50 border-blue-200' 
+                    ? 'bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-700' 
                     : 'border-transparent'
                 }`}
               >
@@ -46,7 +46,7 @@ export default function ProgressSidebar({
                     ? 'brand-500 text-white' 
                     : isCurrent 
                     ? 'brand-500 text-white' 
-                    : 'bg-slate-200 text-slate-600'
+                    : 'bg-slate-200 dark:bg-slate-600 text-slate-600 dark:text-slate-300'
                 }`}>
                   {isCompleted ? (
                     <Check className="h-4 w-4" />
@@ -56,12 +56,12 @@ export default function ProgressSidebar({
                 </div>
                 <div>
                   <p className={`font-medium ${
-                    isCurrent || isCompleted ? 'text-brand-700' : 'text-slate-600'
+                    isCurrent || isCompleted ? 'text-brand-700 dark:text-brand-400' : 'text-slate-600 dark:text-slate-300'
                   }`}>
                     {step.name}
                   </p>
                   <p className={`text-xs ${
-                    isCurrent || isCompleted ? 'text-brand-600' : 'text-slate-500'
+                    isCurrent || isCompleted ? 'text-brand-600 dark:text-brand-500' : 'text-slate-500 dark:text-slate-400'
                   }`}>
                     {step.description}
                   </p>
