@@ -118,31 +118,31 @@ export default function Results({ data, totalHours, totalCost, onPrev }: Results
         {/* Project Details */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div>
-            <h3 className="text-lg font-semibold text-slate-900 mb-4">Project Overview</h3>
+            <h3 className="text-lg font-semibold text-slate-900 mb-4">Projekt Oversigt</h3>
             <div className="space-y-3">
               <div>
-                <span className="text-sm font-medium text-slate-600">Project Name:</span>
+                <span className="text-sm font-medium text-slate-600">Projektnavn:</span>
                 <p className="text-slate-900">{data.projectName}</p>
               </div>
               <div>
-                <span className="text-sm font-medium text-slate-600">Project Type:</span>
+                <span className="text-sm font-medium text-slate-600">Projekttype:</span>
                 <p className="text-slate-900 capitalize">{data.projectType.replace('-', ' ')}</p>
               </div>
               <div>
-                <span className="text-sm font-medium text-slate-600">Complexity:</span>
+                <span className="text-sm font-medium text-slate-600">Kompleksitet:</span>
                 <Badge variant="outline" className="ml-2 capitalize">
-                  {data.complexity}
+                  {data.complexity === 'simple' ? 'Simpel' : data.complexity === 'medium' ? 'Medium' : 'Kompleks'}
                 </Badge>
               </div>
               <div>
-                <span className="text-sm font-medium text-slate-600">Hourly Rate:</span>
-                <p className="text-slate-900">${data.hourlyRate}/hour</p>
+                <span className="text-sm font-medium text-slate-600">Timeløn:</span>
+                <p className="text-slate-900">{data.hourlyRate} kr/time</p>
               </div>
             </div>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-slate-900 mb-4">Tech Stack</h3>
+            <h3 className="text-lg font-semibold text-slate-900 mb-4">Teknologi Stack</h3>
             <div className="space-y-3">
               <div>
                 <span className="text-sm font-medium text-slate-600">Frontend:</span>
@@ -166,7 +166,7 @@ export default function Results({ data, totalHours, totalCost, onPrev }: Results
 
         {/* Selected Features */}
         <div className="mt-8">
-          <h3 className="text-lg font-semibold text-slate-900 mb-4">Selected Features</h3>
+          <h3 className="text-lg font-semibold text-slate-900 mb-4">Valgte Funktioner</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {selectedFeatureObjects.map(feature => (
               <div key={feature.id} className="border border-slate-200 rounded-lg p-4">
@@ -176,7 +176,7 @@ export default function Results({ data, totalHours, totalCost, onPrev }: Results
                     <p className="text-sm text-slate-600">{feature.description}</p>
                   </div>
                   <span className="text-sm font-medium text-brand-600">
-                    {feature.baseHours}h
+                    {feature.baseHours}t
                   </span>
                 </div>
               </div>
@@ -188,7 +188,7 @@ export default function Results({ data, totalHours, totalCost, onPrev }: Results
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-8 pt-6 border-t border-slate-200">
           <Button variant="outline" onClick={onPrev}>
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Previous
+            Forrige
           </Button>
           
           <div className="flex gap-3">
@@ -197,7 +197,7 @@ export default function Results({ data, totalHours, totalCost, onPrev }: Results
               onClick={() => exportToJSON(data, totalHours, totalCost)}
             >
               <Download className="mr-2 h-4 w-4" />
-              Export JSON
+              Eksporter JSON
             </Button>
             
             <Button
@@ -205,7 +205,7 @@ export default function Results({ data, totalHours, totalCost, onPrev }: Results
               onClick={() => exportToPDF(data, totalHours, totalCost, selectedFeatureObjects)}
             >
               <FileText className="mr-2 h-4 w-4" />
-              Export PDF
+              Eksporter PDF
             </Button>
             
             <Button
@@ -214,7 +214,7 @@ export default function Results({ data, totalHours, totalCost, onPrev }: Results
               className="brand-500 hover:brand-600"
             >
               <Save className="mr-2 h-4 w-4" />
-              {saveEstimate.isPending ? 'Saving...' : 'Save Estimate'}
+              {saveEstimate.isPending ? 'Gemmer...' : 'Gem Estimat'}
             </Button>
           </div>
         </div>

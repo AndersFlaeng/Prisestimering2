@@ -30,7 +30,7 @@ export default function CostBreakdown({
         <CardHeader className="pb-3">
           <div className="flex items-center justify-between">
             <CardTitle className="text-base font-medium text-slate-900">
-              Cost Breakdown
+              Omkostningsfordeling
             </CardTitle>
             <Button
               variant="ghost"
@@ -46,40 +46,40 @@ export default function CostBreakdown({
         <CardContent className="pt-0">
           <div className="space-y-2 text-sm">
             <div className="flex justify-between">
-              <span className="text-slate-600">Authentication</span>
+              <span className="text-slate-600">Autentifikation</span>
               <span className="font-medium">
-                ${breakdown.authentication.toLocaleString()}
+                {breakdown.authentication.toLocaleString()} kr
               </span>
             </div>
             <div className="flex justify-between">
               <span className="text-slate-600">Database</span>
               <span className="font-medium">
-                ${breakdown.database.toLocaleString()}
+                {breakdown.database.toLocaleString()} kr
               </span>
             </div>
             <div className="flex justify-between">
               <span className="text-slate-600">API Integration</span>
               <span className="font-medium">
-                ${breakdown.api.toLocaleString()}
+                {breakdown.api.toLocaleString()} kr
               </span>
             </div>
             <div className="flex justify-between">
               <span className="text-slate-600">UI/UX</span>
               <span className="font-medium">
-                ${breakdown.ui.toLocaleString()}
+                {breakdown.ui.toLocaleString()} kr
               </span>
             </div>
             <div className="flex justify-between">
-              <span className="text-slate-600">Testing & QA</span>
+              <span className="text-slate-600">Test & QA</span>
               <span className="font-medium">
-                ${breakdown.testing.toLocaleString()}
+                {breakdown.testing.toLocaleString()} kr
               </span>
             </div>
             <hr className="my-2" />
             <div className="flex justify-between font-semibold">
               <span>Total</span>
               <span className="text-brand-600">
-                ${breakdown.total.toLocaleString()}
+                {breakdown.total.toLocaleString()} kr
               </span>
             </div>
           </div>
@@ -104,7 +104,7 @@ export default function CostBreakdown({
             }}
           >
             <Download className="mr-2 h-4 w-4" />
-            Export Breakdown
+            Eksporter Fordeling
           </Button>
         </CardContent>
       </Card>
