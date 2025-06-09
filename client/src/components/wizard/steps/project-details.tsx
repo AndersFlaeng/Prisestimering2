@@ -21,60 +21,60 @@ export default function ProjectDetails({ data, updateData, onNext }: ProjectDeta
         <div className="flex items-center justify-between">
           <div>
             <CardTitle className="text-2xl font-semibold text-slate-900">
-              Project Details
+              Projektdetaljer
             </CardTitle>
             <p className="text-slate-600 mt-1">
-              Let's start with the basic information about your project
+              Lad os starte med de grundlæggende oplysninger om dit projekt
             </p>
           </div>
-          <div className="text-sm text-slate-500">Step 1 of 5</div>
+          <div className="text-sm text-slate-500">Trin 1 af 5</div>
         </div>
       </CardHeader>
 
       <CardContent className="p-8">
         <div className="space-y-6">
           <div className="space-y-2">
-            <Label htmlFor="projectName">Project Name *</Label>
+            <Label htmlFor="projectName">Projektnavn *</Label>
             <Input
               id="projectName"
-              placeholder="Enter your project name"
+              placeholder="Indtast dit projektnavn"
               value={data.projectName}
               onChange={(e) => updateData({ projectName: e.target.value })}
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="projectType">Project Type *</Label>
+            <Label htmlFor="projectType">Projekttype *</Label>
             <Select 
               value={data.projectType} 
               onValueChange={(value) => updateData({ projectType: value })}
             >
               <SelectTrigger>
-                <SelectValue placeholder="Select project type" />
+                <SelectValue placeholder="Vælg projekttype" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="web-app">Web Application</SelectItem>
-                <SelectItem value="mobile-app">Mobile Application</SelectItem>
+                <SelectItem value="web-app">Web Applikation</SelectItem>
+                <SelectItem value="mobile-app">Mobil Applikation</SelectItem>
                 <SelectItem value="api">API/Backend Service</SelectItem>
                 <SelectItem value="ecommerce">E-commerce Platform</SelectItem>
                 <SelectItem value="cms">Content Management System</SelectItem>
                 <SelectItem value="saas">SaaS Platform</SelectItem>
-                <SelectItem value="other">Other</SelectItem>
+                <SelectItem value="other">Andet</SelectItem>
               </SelectContent>
             </Select>
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="hourlyRate">Hourly Rate (USD)</Label>
+            <Label htmlFor="hourlyRate">Timeløn (DKK)</Label>
             <Input
               id="hourlyRate"
               type="number"
-              placeholder="75"
+              placeholder="500"
               value={data.hourlyRate}
-              onChange={(e) => updateData({ hourlyRate: Number(e.target.value) || 75 })}
+              onChange={(e) => updateData({ hourlyRate: Number(e.target.value) || 500 })}
             />
             <p className="text-sm text-slate-500">
-              This will be used to calculate the total project cost
+              Dette bruges til at beregne den samlede projektomkostning
             </p>
           </div>
         </div>
@@ -85,7 +85,7 @@ export default function ProjectDetails({ data, updateData, onNext }: ProjectDeta
             disabled={!canProceed}
             className="brand-500 hover:brand-600"
           >
-            Continue to Features
+            Fortsæt til Funktioner
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>

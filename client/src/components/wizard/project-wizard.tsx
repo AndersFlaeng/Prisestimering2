@@ -29,7 +29,7 @@ const initialData: ProjectData = {
     deployment: "cloud",
   },
   complexity: "medium",
-  hourlyRate: 75,
+  hourlyRate: 500,
 };
 
 export default function ProjectWizard() {

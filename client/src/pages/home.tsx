@@ -16,10 +16,10 @@ export default function Home() {
             </div>
             <div className="flex items-center space-x-4">
               <button className="text-slate-600 hover:text-slate-900 px-3 py-2 rounded-md text-sm font-medium">
-                <i className="fas fa-history mr-2"></i>History
+                <i className="fas fa-history mr-2"></i>Historik
               </button>
               <button className="brand-500 hover:brand-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
-                <i className="fas fa-save mr-2"></i>Save Template
+                <i className="fas fa-save mr-2"></i>Gem Skabelon
               </button>
             </div>
           </div>

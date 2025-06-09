@@ -43,13 +43,13 @@ export default function FeatureSelection({ data, updateData, onNext, onPrev }: F
         <div className="flex items-center justify-between">
           <div>
             <CardTitle className="text-2xl font-semibold text-slate-900">
-              Feature Selection
+              Funktionsvalg
             </CardTitle>
             <p className="text-slate-600 mt-1">
-              Choose the features and components your project needs
+              Vælg de funktioner og komponenter dit projekt har brug for
             </p>
           </div>
-          <div className="text-sm text-slate-500">Step 2 of 5</div>
+          <div className="text-sm text-slate-500">Trin 2 af 5</div>
         </div>
       </CardHeader>
 
@@ -75,10 +75,10 @@ export default function FeatureSelection({ data, updateData, onNext, onPrev }: F
                         {category.replace(/([A-Z])/g, ' $1').trim()}
                       </h3>
                       <p className="text-sm text-slate-600">
-                        {category === 'authentication' && 'User management and security features'}
-                        {category === 'database' && 'Data management and storage solutions'}
-                        {category === 'api' && 'Third-party services and APIs'}
-                        {category === 'ui' && 'User interface and experience features'}
+                        {category === 'authentication' && 'Brugerstyring og sikkerhedsfunktioner'}
+                        {category === 'database' && 'Datastyring og lagringsløsninger'}
+                        {category === 'api' && 'Tredjepartstjenester og API\'er'}
+                        {category === 'ui' && 'Brugerinterface og oplevelsesfeatures'}
                       </p>
                     </div>
                   </div>

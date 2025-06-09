@@ -8,11 +8,11 @@ interface ProgressSidebarProps {
 }
 
 const steps = [
-  { name: "Project Details", description: "Basic information" },
-  { name: "Feature Selection", description: "Choose components" },
-  { name: "Tech Stack", description: "Select technologies" },
-  { name: "Complexity", description: "Assess difficulty" },
-  { name: "Results", description: "View estimate" },
+  { name: "Projektdetaljer", description: "Grundlæggende information" },
+  { name: "Funktionsvalg", description: "Vælg komponenter" },
+  { name: "Teknologi Stack", description: "Vælg teknologier" },
+  { name: "Kompleksitet", description: "Vurder sværhedsgrad" },
+  { name: "Resultater", description: "Se estimat" },
 ];
 
 export default function ProgressSidebar({ 
@@ -24,7 +24,7 @@ export default function ProgressSidebar({
   return (
     <div className="lg:col-span-1">
       <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 sticky top-8">
-        <h2 className="text-lg font-semibold text-slate-900 mb-6">Project Estimation</h2>
+        <h2 className="text-lg font-semibold text-slate-900 mb-6">Projekt Estimering</h2>
         
         {/* Progress Steps */}
         <div className="space-y-4">
@@ -73,15 +73,15 @@ export default function ProgressSidebar({
 
         {/* Quick Stats */}
         <div className="mt-8 pt-6 border-t border-slate-200">
-          <h3 className="font-medium text-slate-900 mb-4">Current Estimate</h3>
+          <h3 className="font-medium text-slate-900 mb-4">Nuværende Estimat</h3>
           <div className="space-y-3">
             <div className="flex justify-between">
-              <span className="text-sm text-slate-600">Features</span>
+              <span className="text-sm text-slate-600">Funktioner</span>
               <span className="text-sm font-medium">{selectedFeaturesCount}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-sm text-slate-600">Timeline</span>
-              <span className="text-sm font-medium">{estimatedWeeks} weeks</span>
+              <span className="text-sm text-slate-600">Tidsramme</span>
+              <span className="text-sm font-medium">{estimatedWeeks} uger</span>
             </div>
             <div className="flex justify-between items-center pt-2 border-t border-slate-200">
               <span className="font-medium text-slate-900">Total</span>
