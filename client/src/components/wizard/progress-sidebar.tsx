@@ -73,18 +73,18 @@ export default function ProgressSidebar({
 
         {/* Quick Stats */}
         <div className="mt-8 pt-6 border-t border-slate-200">
-          <h3 className="font-medium text-slate-900 mb-4">Nuværende Estimat</h3>
+          <h3 className="font-medium text-slate-900 dark:text-slate-100 mb-4">Nuværende Estimat</h3>
           <div className="space-y-3">
             <div className="flex justify-between">
-              <span className="text-sm text-slate-600">Funktioner</span>
-              <span className="text-sm font-medium">{selectedFeaturesCount}</span>
+              <span className="text-sm text-slate-600 dark:text-slate-300">Funktioner</span>
+              <span className="text-sm font-medium text-slate-900 dark:text-slate-100">{selectedFeaturesCount}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-sm text-slate-600">Tidsramme</span>
-              <span className="text-sm font-medium">{estimatedWeeks} uger</span>
+              <span className="text-sm text-slate-600 dark:text-slate-300">Tidsramme</span>
+              <span className="text-sm font-medium text-slate-900 dark:text-slate-100">{estimatedWeeks} uger</span>
             </div>
-            <div className="flex justify-between items-center pt-2 border-t border-slate-200">
-              <span className="font-medium text-slate-900">Total</span>
+            <div className="flex justify-between items-center pt-2 border-t border-slate-200 dark:border-slate-600">
+              <span className="font-medium text-slate-900 dark:text-slate-100">Total</span>
               <span className="text-lg font-semibold text-brand-600">
                 ${totalCost.toLocaleString()}
               </span>
