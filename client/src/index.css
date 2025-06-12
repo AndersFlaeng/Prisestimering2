@@ -6,14 +6,14 @@
   --background: hsl(0, 0%, 100%);
   --foreground: hsl(222.2, 84%, 4.9%);
   --muted: hsl(210, 40%, 98%);
-  --muted-foreground: hsl(215.4, 16.3%, 46.9%);
+  --muted-foreground: #F7A55A;
   --popover: hsl(0, 0%, 100%);
   --popover-foreground: hsl(222.2, 84%, 4.9%);
   --card: hsl(0, 0%, 100%);
   --card-foreground: hsl(222.2, 84%, 4.9%);
   --border: hsl(214.3, 31.8%, 91.4%);
   --input: hsl(214.3, 31.8%, 91.4%);
-  --primary: hsl(217.2, 91.2%, 59.8%);
+  --primary: #F7A55A;
   --primary-foreground: hsl(222.2, 84%, 4.9%);
   --secondary: hsl(210, 40%, 98%);
   --secondary-foreground: hsl(222.2, 84%, 4.9%);
@@ -21,36 +21,36 @@
   --accent-foreground: hsl(222.2, 84%, 4.9%);
   --destructive: hsl(0, 84.2%, 60.2%);
   --destructive-foreground: hsl(60, 9.1%, 97.8%);
-  --ring: hsl(217.2, 91.2%, 59.8%);
+  --ring: #F7A55A;
   --radius: 0.5rem;
   
   /* Brand colors matching design */
   --brand-50: hsl(214, 100%, 97%);
-  --brand-500: hsl(217, 91%, 60%);
-  --brand-600: hsl(221, 83%, 53%);
-  --brand-700: hsl(224, 76%, 48%);
+  --brand-500: #F7A55A;
+  --brand-600: #F7A55A;
+  --brand-700: #F7A55A;
 }
 
 .dark {
   --background: hsl(222.2, 84%, 4.9%);
-  --foreground: hsl(210, 40%, 98%);
+  --foreground: #ffffff;
   --muted: hsl(217.2, 32.6%, 17.5%);
   --muted-foreground: hsl(215, 20.2%, 65.1%);
   --popover: hsl(222.2, 84%, 4.9%);
-  --popover-foreground: hsl(210, 40%, 98%);
+  --popover-foreground: #FCFCFC;
   --card: hsl(222.2, 84%, 4.9%);
-  --card-foreground: hsl(210, 40%, 98%);
+  --card-foreground:#FCFCFC;
   --border: hsl(217.2, 32.6%, 17.5%);
   --input: hsl(217.2, 32.6%, 17.5%);
-  --primary: hsl(217.2, 91.2%, 59.8%);
-  --primary-foreground: hsl(222.2, 84%, 4.9%);
-  --secondary: hsl(217.2, 32.6%, 17.5%);
-  --secondary-foreground: hsl(210, 40%, 98%);
-  --accent: hsl(217.2, 32.6%, 17.5%);
-  --accent-foreground: hsl(210, 40%, 98%);
+  --primary: #F7A55A;
+  --primary-foreground: hsl(129, 84%, 5%);
+  --secondary: #F7A55A;
+  --secondary-foreground: #fcfcfc;
+  --accent: #F7A55A;
+  --accent-foreground: #FCFCFC;
   --destructive: hsl(0, 62.8%, 30.6%);
-  --destructive-foreground: hsl(210, 40%, 98%);
-  --ring: hsl(217.2, 91.2%, 59.8%);
+  --destructive-foreground:#FCFCFC;
+  --ring: #F7A55A;
 }
 
 @layer base {
@@ -64,37 +64,37 @@
 }
 
 .brand-50 {
-  background-color: hsl(214, 100%, 97%);
+  background-color: #FCFCFC;
 }
 
 .brand-500 {
-  background-color: hsl(217, 91%, 60%);
+  background-color: #F7A55A;
 }
 
 .brand-600 {
-  background-color: hsl(221, 83%, 53%);
+  background-color: #F7A55A;
 }
 
 .brand-700 {
-  background-color: hsl(224, 76%, 48%);
+  background-color: #F7A55A;
 }
 
 .text-brand-500 {
-  color: hsl(217, 91%, 60%);
+  color: #F7A55A;
 }
 
 .text-brand-600 {
-  color: hsl(221, 83%, 53%);
+  color: #F7A55A;
 }
 
 .text-brand-700 {
-  color: hsl(224, 76%, 48%);
+  color:#F7A55A;
 }
 
 .border-brand-200 {
-  border-color: hsl(214, 95%, 93%);
+  border-color: #FCFCFC;
 }
 
 .border-brand-500 {
-  border-color: hsl(217, 91%, 60%);
+  border-color: #F7A55A;
 }

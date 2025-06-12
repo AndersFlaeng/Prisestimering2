@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea"; // Tilføjet textarea komponent
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ArrowRight } from "lucide-react";
 import type { ProjectData } from "../project-wizard";
@@ -20,21 +21,22 @@ export default function ProjectDetails({ data, updateData, onNext }: ProjectDeta
       <CardHeader className="border-b border-slate-200">
         <div className="flex items-center justify-between">
           <div>
-            <CardTitle className="text-2xl font-semibold text-slate-900">
+            <CardTitle className="text-2xl font-semibold text-foreground">
               Projektdetaljer
             </CardTitle>
-            <p className="text-slate-600 mt-1">
+            <p className="text-text-foreground mt-1">
               Lad os starte med de grundlæggende oplysninger om dit projekt
             </p>
           </div>
-          <div className="text-sm text-slate-500">Trin 1 af 5</div>
+          <div className="text-sm text-foreground mt-1">Trin 1 af 4</div>
         </div>
       </CardHeader>
 
       <CardContent className="p-8">
         <div className="space-y-6">
+          {/* Projektnavn */}
           <div className="space-y-2">
-            <Label htmlFor="projectName">Projektnavn *</Label>
+            <Label htmlFor="projectName">Projektnavn/Virksomhed *</Label>
             <Input
               id="projectName"
               placeholder="Indtast dit projektnavn"
@@ -43,10 +45,34 @@ export default function ProjectDetails({ data, updateData, onNext }: ProjectDeta
             />
           </div>
 
+          {/* Projektbeskrivelse (stor textarea) */}
+          <div className="space-y-2">
+            <Label htmlFor="projectDescription">Projektbeskrivelse</Label>
+            <Textarea
+              id="projectDescription"
+              placeholder="Beskriv dit projekt"
+              value={data.projectDescription || ""}
+              onChange={(e) => updateData({ projectDescription: e.target.value })}
+              rows={5}
+            />
+          </div>
+
+          {/* Industri som almindeligt input */}
+          <div className="space-y-2">
+            <Label htmlFor="industry">Industri</Label>
+            <Input
+              id="industry"
+              placeholder="Angiv industri"
+              value={data.industry || ""}
+              onChange={(e) => updateData({ industry: e.target.value })}
+            />
+          </div>
+
+          {/* Projekttype */}
           <div className="space-y-2">
             <Label htmlFor="projectType">Projekttype *</Label>
-            <Select 
-              value={data.projectType} 
+            <Select
+              value={data.projectType}
               onValueChange={(value) => updateData({ projectType: value })}
             >
               <SelectTrigger>
@@ -58,30 +84,27 @@ export default function ProjectDetails({ data, updateData, onNext }: ProjectDeta
                 <SelectItem value="api">API/Backend Service</SelectItem>
                 <SelectItem value="ecommerce">E-commerce Platform</SelectItem>
                 <SelectItem value="cms">Content Management System</SelectItem>
-                <SelectItem value="saas">SaaS Platform</SelectItem>
-                <SelectItem value="other">Andet</SelectItem>
+                <SelectItem value="fullstack">Full Stack</SelectItem>
+                <SelectItem value="andet">Andet</SelectItem>
               </SelectContent>
             </Select>
           </div>
 
+          {/* Team Size */}
           <div className="space-y-2">
-            <Label htmlFor="hourlyRate">Timeløn (DKK)</Label>
+            <Label htmlFor="teamSize">Medarbejdere</Label>
             <Input
-              id="hourlyRate"
-              type="number"
-              placeholder="500"
-              value={data.hourlyRate}
-              onChange={(e) => updateData({ hourlyRate: Number(e.target.value) || 500 })}
+              id="teamSize"
+              placeholder="Angiv antal i teamet"
+              value={data.teamSize || ""}
+              onChange={(e) => updateData({ teamSize: e.target.value })}
             />
-            <p className="text-sm text-slate-500">
-              Dette bruges til at beregne den samlede projektomkostning
-            </p>
           </div>
         </div>
 
         <div className="flex justify-end mt-8 pt-6 border-t border-slate-200">
-          <Button 
-            onClick={onNext} 
+          <Button
+            onClick={onNext}
             disabled={!canProceed}
             className="brand-500 hover:brand-600"
           >

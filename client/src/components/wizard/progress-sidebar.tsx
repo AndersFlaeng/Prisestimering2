@@ -11,7 +11,6 @@ const steps = [
   { name: "Projektdetaljer", description: "Grundlæggende information" },
   { name: "Funktionsvalg", description: "Vælg komponenter" },
   { name: "Teknologi Stack", description: "Vælg teknologier" },
-  { name: "Kompleksitet", description: "Vurder sværhedsgrad" },
   { name: "Resultater", description: "Se estimat" },
 ];
 
@@ -37,15 +36,14 @@ export default function ProgressSidebar({
                 key={index}
                 className={`flex items-center space-x-3 p-3 rounded-lg border ${
                   isCurrent || isCompleted 
-                    ? 'bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-700' 
+                    ? 'border-[#F7A55A] dark:border-[#F7A55A]' 
                     : 'border-transparent'
                 }`}
+                style={isCurrent || isCompleted ? { backgroundColor: 'rgba(247, 165, 90, 0.15)' } : undefined}
               >
                 <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
-                  isCompleted 
-                    ? 'brand-500 text-white' 
-                    : isCurrent 
-                    ? 'brand-500 text-white' 
+                  isCompleted || isCurrent
+                    ? 'bg-[#F7A55A] text-white' 
                     : 'bg-slate-200 dark:bg-slate-600 text-slate-600 dark:text-slate-300'
                 }`}>
                   {isCompleted ? (
@@ -56,12 +54,12 @@ export default function ProgressSidebar({
                 </div>
                 <div>
                   <p className={`font-medium ${
-                    isCurrent || isCompleted ? 'text-brand-700 dark:text-brand-400' : 'text-slate-600 dark:text-slate-300'
+                    isCurrent || isCompleted ? 'text-[#F7A55A]' : 'text-slate-600 dark:text-slate-300'
                   }`}>
                     {step.name}
                   </p>
                   <p className={`text-xs ${
-                    isCurrent || isCompleted ? 'text-brand-600 dark:text-brand-500' : 'text-slate-500 dark:text-slate-400'
+                    isCurrent || isCompleted ? 'text-[#F7A55A]/90' : 'text-slate-500 dark:text-slate-400'
                   }`}>
                     {step.description}
                   </p>
@@ -72,7 +70,7 @@ export default function ProgressSidebar({
         </div>
 
         {/* Quick Stats */}
-        <div className="mt-8 pt-6 border-t border-slate-200">
+        <div className="mt-8 pt-6 border-t border-slate-200 dark:border-slate-600">
           <h3 className="font-medium text-slate-900 dark:text-slate-100 mb-4">Nuværende Estimat</h3>
           <div className="space-y-3">
             <div className="flex justify-between">
@@ -85,8 +83,8 @@ export default function ProgressSidebar({
             </div>
             <div className="flex justify-between items-center pt-2 border-t border-slate-200 dark:border-slate-600">
               <span className="font-medium text-slate-900 dark:text-slate-100">Total</span>
-              <span className="text-lg font-semibold text-brand-600">
-                ${totalCost.toLocaleString()}
+              <span className="text-lg font-semibold" style={{ color: '#F7A55A' }}>
+                DK {totalCost.toLocaleString()}
               </span>
             </div>
           </div>

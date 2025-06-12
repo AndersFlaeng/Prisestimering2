@@ -14,28 +14,41 @@ interface TechStackProps {
 
 const techOptions = {
   frontend: [
-    { value: "react", label: "React.js", multiplier: 1.0 },
-    { value: "vue", label: "Vue.js", multiplier: 0.9 },
-    { value: "angular", label: "Angular", multiplier: 1.2 },
-    { value: "svelte", label: "Svelte", multiplier: 0.8 },
+    { value: "angular", label: "Angular", icon: "https://cdn.simpleicons.org/angular/ef3e36" },
+    { value: "react", label: "React", icon: "https://cdn.simpleicons.org/react/61dafb" },
+    { value: "javascript", label: "JavaScript", icon: "https://cdn.simpleicons.org/javascript/f7df1e" },
+    { value: "vue", label: "Vue.js", icon: "https://cdn.simpleicons.org/vuedotjs/42b883" },
+    { value: "typescript", label: "TypeScript", icon: "https://cdn.simpleicons.org/typescript/3178c6" },
+    { value: "svelte", label: "Svelte", icon: "https://cdn.simpleicons.org/svelte/ff3e00" },
+    { value: "css", label: "CSS", icon: "https://cdn.simpleicons.org/css/0000ff"},
+    { value: "html", label: "HTML", icon: "https://cdn.simpleicons.org/html5/e34f26" },
+    { value: "php", label: "PHP", icon: "https://cdn.simpleicons.org/php/777bb4" },
+    { value: "andet", label: "Andet" },
   ],
   backend: [
-    { value: "nodejs", label: "Node.js", multiplier: 1.0 },
-    { value: "python", label: "Python/Django", multiplier: 1.1 },
-    { value: "php", label: "PHP/Laravel", multiplier: 0.8 },
-    { value: "java", label: "Java/Spring", multiplier: 1.3 },
+    { value: ".net", label: ".NET", icon: "https://cdn.simpleicons.org/dotnet/512bd4" },
+    { value: "c#", label: "C#", icon: "https://cdn.simpleicons.org/cplusplus/00599C"},
+    { value: "java", label: "Java", icon: "https://cdn.simpleicons.org/coffeescript/2F2625"},
+    { value: "typescript", label: "TypeScript", icon: "https://cdn.simpleicons.org/typescript/3178c6" },
+    { value: "kotlin", label: "Kotlin", icon: "https://cdn.simpleicons.org/kotlin/7f52ff" },
+    { value: "sql", label: "SQL", icon: "https://cdn.simpleicons.org/mysql/4479a1" },
+    { value: "graphql", label: "GraphQL", icon: "https://cdn.simpleicons.org/graphql/e10098" },
+    { value: "restapi", label: "REST API", icon: "https://cdn.simpleicons.org/icloud/3693F3"},
+    { value: "python", label: "Python", icon: "https://cdn.simpleicons.org/python/3776ab" },
+    { value: "andet", label: "Andet"},
   ],
   database: [
-    { value: "postgresql", label: "PostgreSQL", multiplier: 1.0 },
-    { value: "mysql", label: "MySQL", multiplier: 0.9 },
-    { value: "mongodb", label: "MongoDB", multiplier: 1.1 },
-    { value: "sqlite", label: "SQLite", multiplier: 0.7 },
+    { value: "sql", label: "SQL", icon: "https://cdn.simpleicons.org/mysql/4479a1" },
+    { value: "mongodb", label: "MongoDB", icon: "https://cdn.simpleicons.org/mongodb/47a248" },
+    { value: "andet", label: "Andet" },
   ],
   deployment: [
-    { value: "cloud", label: "Cloud (AWS/GCP/Azure)", multiplier: 1.0 },
-    { value: "vps", label: "VPS/Dedicated Server", multiplier: 0.8 },
-    { value: "shared", label: "Shared Hosting", multiplier: 0.6 },
-    { value: "docker", label: "Docker/Kubernetes", multiplier: 1.2 },
+    { value: "cloud", label: "Cloud (AWS/GCP/Azure)"},
+    { value: "vps", label: "VPS/Dedicated Server" },
+
+    { value: "shared", label: "Shared Hosting"},
+    { value: "docker", label: "Docker/Kubernetes" },
+    { value: "andet", label: "Andet"},
   ],
 };
 
@@ -54,14 +67,14 @@ export default function TechStack({ data, updateData, onNext, onPrev }: TechStac
       <CardHeader className="border-b border-slate-200">
         <div className="flex items-center justify-between">
           <div>
-            <CardTitle className="text-2xl font-semibold text-slate-900">
+            <CardTitle className="text-2xl font-semibold text-foreground">
               Teknologi Stack Valg
             </CardTitle>
-            <p className="text-slate-600 mt-1">
+            <p className="text-foreground mt-1">
               Vælg teknologierne til dit projekt. Forskellige valg påvirker udviklingstid og omkostninger.
             </p>
           </div>
-          <div className="text-sm text-slate-500">Trin 3 af 5</div>
+          <div className="text-sm text-foreground">Trin 3 af 4</div>
         </div>
       </CardHeader>
 
@@ -69,7 +82,7 @@ export default function TechStack({ data, updateData, onNext, onPrev }: TechStac
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {Object.entries(techOptions).map(([category, options]) => (
             <div key={category} className="border border-slate-200 rounded-lg p-6">
-              <h3 className="font-semibold text-slate-900 mb-4 capitalize">
+              <h3 className="font-semibold text-foreground mb-4 capitalize">
                 {category === 'frontend' && 'Frontend Framework'}
                 {category === 'backend' && 'Backend Teknologi'}
                 {category === 'database' && 'Database'}
@@ -84,29 +97,17 @@ export default function TechStack({ data, updateData, onNext, onPrev }: TechStac
                 {options.map(option => (
                   <div key={option.value} className="flex items-center space-x-3">
                     <RadioGroupItem value={option.value} id={`${category}-${option.value}`} />
-                    <Label 
-                      htmlFor={`${category}-${option.value}`} 
-                      className="flex-1 cursor-pointer"
-                    >
-                      <div className="flex justify-between items-center">
-                        <span>{option.label}</span>
-                        <span className="text-xs text-brand-600 font-medium">
-                          {option.multiplier}x
-                        </span>
-                      </div>
+                    <Label htmlFor={`${category}-${option.value}`} className="flex items-center space-x-3 flex-1 cursor-pointer">
+                      {option.icon && (
+                        <img src={option.icon} alt={option.label} className="w-5 h-5" />
+                      )}
+                      <span>{option.label}</span>
                     </Label>
                   </div>
                 ))}
               </RadioGroup>
             </div>
           ))}
-        </div>
-
-        <div className="mt-8 p-4 bg-slate-50 rounded-lg">
-          <p className="text-sm text-slate-600">
-            <strong>Bemærk:</strong> Multiplikatoren viser, hvordan teknologivalget påvirker udviklingstiden. 
-            En 1.2x multiplikator betyder 20% mere tid sammenlignet med baseline teknologien.
-          </p>
         </div>
 
         <div className="flex justify-between items-center mt-8 pt-6 border-t border-slate-200">
@@ -116,7 +117,7 @@ export default function TechStack({ data, updateData, onNext, onPrev }: TechStac
           </Button>
           
           <Button onClick={onNext} className="brand-500 hover:brand-600">
-            Fortsæt til Kompleksitet
+            Fortsæt til oversigt
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
